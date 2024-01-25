@@ -1,0 +1,8 @@
+- backend service 
+- User Interface
+    - Vue
+        - Deploy        : [x] Vue in java code
+        - Develop UI    : Admin template
+        - Develop UI    : Add new appointment
+        - Develop UI    : List all appointments
+        - Develop UI    : Login
