@@ -1,15 +1,15 @@
 <template>
     <div class="body-login">
         <div class="wrapper">
-        <form action="">
+        <form action="/vue/login" method="POST">
             <h1>Login</h1>
             <div class="input-box">
-                <input type="text" placeholder="Username" required />
+                <input type="text" name="username" placeholder="Username" required  />
                 <!-- <box-icon name="user" type="solid" class="icon-style"></box-icon> -->
                 <i class="bx bxs-user"></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="Password" required>
+                <input type="password" name="password" placeholder="Password" required />
                 <i class="bx bxs-lock-alt"></i>
             </div>
             <div class="remember-forgot">
@@ -35,24 +35,20 @@ export default defineComponent({
 });
 </script>
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
-
 .body-login {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #fff;
+    background: url("@/assets/telenor-cover.png") no-repeat;
+    background-size: cover;
+    background-position: center;
 }
+
 .wrapper{
     width: 420px;
-    background: #00c8ff;
+    background: rgb(0, 200, 255, 0.3);
+    /* background: transparent; */
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;

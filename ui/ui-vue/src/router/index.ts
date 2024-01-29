@@ -8,7 +8,8 @@ const routes: Array<RouteRecordRaw> = [
   {
     path:"/vue",
     children:[
-      {path:"login",component: () => import(/* webpackChunkName: "login-page" */"@/views/LoginPage.vue")}
+      {path:"login",component: () => import(/* webpackChunkName: "login-page" */"@/views/LoginPage.vue")},
+      {path:"dashboard",component: () => import(/* webpackChunkName: "dashboard-view" */"@/views/DashboardView.vue")}
     ]
   },
   {
