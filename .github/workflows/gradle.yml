@@ -53,3 +53,7 @@ jobs:
       with:
         push: true
         tags: rest-service:0.0.1-SNAPSHOT
+      run:
+        |
+        docker images
+      working-directory: rest-service-kotlin/
