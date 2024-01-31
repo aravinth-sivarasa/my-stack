@@ -45,7 +45,11 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: print env variable
+      run: echo "$GITHUB_CONTEXT"
+
     - name: Push the image
       uses: docker/build-push-action@v5
       with:
         push: true
+        tags: rest-service:0.0.1-SNAPSHOT
