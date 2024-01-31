@@ -28,7 +28,6 @@
   
 </template>
 <script lang="ts">
-import "boxicons"
 import { defineComponent } from "vue";
 export default defineComponent({
 
