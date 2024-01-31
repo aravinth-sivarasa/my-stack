@@ -33,3 +33,6 @@ jobs:
     - name: Execute Gradle build
       run: ./gradlew bootBuildImage
       working-directory: rest-service-kotlin/
+
+    - name: View docker images
+      run: docker images
