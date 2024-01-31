@@ -26,8 +26,8 @@ public class MainSecurityConfig {
                 "/css/**", 
                 "/vue/login/**",
                 "/favicon.ico",
-                "/index.html",
-                "/index.js").permitAll()
+                "/manifest.json",
+                "/index.html").permitAll()
             .anyRequest()
             .authenticated())
         .csrf(csrf -> csrf.disable())
