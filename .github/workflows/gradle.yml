@@ -21,9 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: change directory to rest-service
-      run: |
-        cd rest-service-kotlin
+
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
@@ -33,4 +31,5 @@ jobs:
       uses: gradle/gradle-build-action@v3
 
     - name: Execute Gradle build
-      run: ls
+      run: ./gradlew build
+      working-directory: rest-service-kotlin/
