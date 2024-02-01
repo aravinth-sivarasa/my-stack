@@ -56,6 +56,7 @@ jobs:
         push: true
         tags: rest-service:0.0.1-SNAPSHOT
         file: rest-service-kotlin/Dockerfile
+        context: .
         no-cache: true
         build-args: |
           bundle_path=rest-service-kotlin/build/libs/rest-service-0.0.1-SNAPSHOT.jar
