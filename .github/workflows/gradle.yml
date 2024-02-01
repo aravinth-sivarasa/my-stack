@@ -55,7 +55,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: true
-        tags: ${{ github.repository }}/rest-service:0.0.1-SNAPSHOT
+        tags: ${{ env.REGISTRY }}/${{ github.repository }}/rest-service:0.0.1-SNAPSHOT
         file: rest-service-kotlin/Dockerfile
         context: .
         no-cache: true
