@@ -48,11 +48,13 @@ jobs:
     - name: print env variable
       run: echo "$GITHUB_CONTEXT"
 
-    - name: Push the image
-      uses: docker/build-push-action@v5
-      with:
-        push: true
-        tags: rest-service:0.0.1-SNAPSHOT
-        context: rest-service-kotlin/
-        build-args: |
-          bundle_path=rest-service-kotlin/build/libs/*.jar
+    - name: list available file
+      run: ls
+    # - name: Push the image
+    #   uses: docker/build-push-action@v5
+    #   with:
+    #     push: true
+    #     tags: rest-service:0.0.1-SNAPSHOT
+    #     context: rest-service-kotlin/
+    #     build-args: |
+    #       bundle_path=rest-service-kotlin/build/libs/*.jar
