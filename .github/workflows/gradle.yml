@@ -49,12 +49,12 @@ jobs:
       run: echo "$GITHUB_CONTEXT"
 
     - name: list available file
-      run: ls rest-service-kotlin/build/libs
+      run: ls rest-service-kotlin
     - name: Push the image
       uses: docker/build-push-action@v5
       with:
         push: true
         tags: rest-service:0.0.1-SNAPSHOT
-        context: rest-service-kotlin/Dockerfile
+        file: rest-service-kotlin/Dockerfile
         build-args: |
           bundle_path=rest-service-kotlin/build/libs/rest-service-0.0.1-SNAPSHOT.jar
