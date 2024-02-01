@@ -49,7 +49,7 @@ jobs:
       run: echo "$GITHUB_CONTEXT"
 
     - name: list available file
-      run: ls
+      run: ls rest-service-kotlin/build/libs
     # - name: Push the image
     #   uses: docker/build-push-action@v5
     #   with:
