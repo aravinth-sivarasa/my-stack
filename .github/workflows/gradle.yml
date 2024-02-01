@@ -51,7 +51,7 @@ jobs:
     - name: list available file
       run: ls rest-service-kotlin
     - name: Push the image
-      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
       with:
         push: true
         tags: rest-service:0.0.1-SNAPSHOT
