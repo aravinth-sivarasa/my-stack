@@ -20,9 +20,7 @@ jobs:
       packages: write
     steps:
     - uses: actions/checkout@v3
-      env:
-        BUNDLE_VERSION: $(sed -n '2p' rest-service-kotlin/build.gradle.kts | cut -d'=' -f 2 | sed 's/[[:space:]]//g' | cut -d'"' -f 2)
-      
+       
     - name: Use Node.js
       uses: actions/setup-node@v3
       with:
@@ -53,6 +51,8 @@ jobs:
 
     - name: Push the image to Github registry
       uses: docker/build-push-action@v5
+      env:
+        BUNDLE_VERSION: $(sed -n '2p' rest-service-kotlin/build.gradle.kts | cut -d'=' -f 2 | sed 's/[[:space:]]//g' | cut -d'"' -f 2)
       with:
         push: true
         tags: ${{ env.REGISTRY }}/${{ github.repository }}/rest-service:${{ env.BUNDLE_VERSION }}
@@ -61,3 +61,4 @@ jobs:
         no-cache: true
         build-args: |
           bundle_path=rest-service-kotlin/build/libs/rest-service-${{ env.BUNDLE_VERSION }}.jar
+        
