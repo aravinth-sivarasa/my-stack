@@ -9,23 +9,15 @@ const routes: Array<RouteRecordRaw> = [
     path:"/vue",
     children:[
       {path:"login",component: () => import(/* webpackChunkName: "login-page" */"@/views/LoginPage.vue")},
-      {path:"dashboard",component: () => import(/* webpackChunkName: "dashboard-view" */"@/views/DashboardView.vue")}
+      {path:"dashboard",redirect:"/vue/home/dashboard"},
+      {
+        path:"home",
+        component: () => import(/* webpackChunkName: "dashboard-view" */"@/views/HomeView.vue"),
+        children:[
+          {path:"invoices",component: () => import(/* webpackChunkName: "invoice-view" */"@/views/InvoiceView.vue")},
+          {path:"dashboard",component: () => import(/* webpackChunkName: "dashboard-view" */"@/views/DashboardView.vue")},
+        ]}
     ]
-  },
-  {
-    path:"/page-one",
-    children:[
-      {path:"", component: () => import(/* webpackChunkName: "page-one" */"@/components/PageOne.vue")},
-      {path:"page-two", component: () => import(/* webpackChunkName: "page-two" */"@/components/PageTwo.vue")}
-    ]
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
     path: "/:catchAll(.*)",
