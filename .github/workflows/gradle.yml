@@ -55,4 +55,4 @@ jobs:
         tags: rest-service:0.0.1-SNAPSHOT
         context: rest-service-kotlin/
         build-args: |
-          bundle_path="rest-service-kotlin/build/libs/**.jar"
+          bundle_path=rest-service-kotlin/build/libs/*.jar
