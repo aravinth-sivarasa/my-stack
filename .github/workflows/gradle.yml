@@ -13,9 +13,6 @@ on:
   pull_request:
     branches: [ "main" ]
 
-permissions:
-  contents: read
-  
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
@@ -24,6 +21,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions: 
+      contents: read
       packages: write
     steps:
     - uses: actions/checkout@v3
@@ -52,6 +50,7 @@ jobs:
 
     - name: list available file
       run: ls rest-service-kotlin
+      
     - name: Push the image
       uses: docker/build-push-action@v5
       with:
