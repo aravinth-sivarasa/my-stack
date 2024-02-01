@@ -15,7 +15,7 @@ on:
 
 permissions:
   contents: read
-  packages: write
+  
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
@@ -23,6 +23,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions: 
+      packages: write
     steps:
     - uses: actions/checkout@v3
 
