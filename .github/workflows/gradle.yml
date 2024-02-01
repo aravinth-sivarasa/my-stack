@@ -9,7 +9,6 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  BUNDLE_VERSION: 0.0.2-SNAPSHOT
   JDK_VERSION: 17
   NODE_VERSION: 20.x
 
@@ -21,7 +20,9 @@ jobs:
       packages: write
     steps:
     - uses: actions/checkout@v3
-
+      env:
+        BUNDLE_VERSION: $(sed -n '2p' rest-service-kotlin/build.gradle.kts | cut -d'=' -f 2 | sed 's/[[:space:]]//g' | cut -d'"' -f 2)
+      
     - name: Use Node.js
       uses: actions/setup-node@v3
       with:
