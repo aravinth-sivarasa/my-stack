@@ -1,0 +1,1 @@
+<template><div class="text">Dashboard</div></template>

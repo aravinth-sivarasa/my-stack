@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.demo.restservice.microservice1.AppointmentDTO.Appointment;
+import io.demo.restservice.microservice1.InvoiceDTO.Invoice;
 
 @RestController
-@RequestMapping("appointments/v1")
-public class AppointmentControllerV1 {
+@RequestMapping("invoices/v1")
+public class InvoiceControllerV1 {
     
 
     @GetMapping
-    List<Appointment> all(){
+    List<Invoice> all(){
         return Arrays.asList(//
-            new Appointment(UUID.randomUUID().toString()),
-            new Appointment(UUID.randomUUID().toString()));
+            new Invoice(UUID.randomUUID().toString()),
+            new Invoice(UUID.randomUUID().toString()));
     }
 }
