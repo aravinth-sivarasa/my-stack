@@ -35,7 +35,7 @@ jobs:
       uses: gradle/gradle-build-action@v3
 
     - name: Execute Gradle build
-      run: ./gradlew bootBuildImage
+      run: ./gradlew build
       working-directory: rest-service-kotlin/
 
     - name: Log in to the Container registry
@@ -54,3 +54,5 @@ jobs:
         push: true
         tags: rest-service:0.0.1-SNAPSHOT
         context: rest-service-kotlin/
+        build-args: |
+          bundle_path="rest-service-kotlin/build/libs/**.jar"
