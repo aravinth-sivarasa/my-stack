@@ -1,0 +1,291 @@
+{
+  "id": "d4052762-9d3c-4579-8f40-5ba2f8383e4a",
+  "version": "2.0",
+  "name": "DemoProject",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "d3f041b1-0ae3-415f-9653-395c583bd9bf",
+    "name": "01-login",
+    "commands": [{
+      "id": "1f307b33-dbea-4473-a145-bea249e758cd",
+      "comment": "",
+      "command": "open",
+      "target": "/vue/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "936f7191-61a5-48dc-b03e-7496db0ff757",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1120",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "44bdada7-2586-4d77-a82d-43ec17419037",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.input-box:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "user"
+    }, {
+      "id": "7910d93a-0ebd-411f-8116-006b82caede8",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-box:nth-child(3) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "17ca60df-286d-4367-93f7-490f8a64a78a",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-box:nth-child(3) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "9ae10cd0-df02-4f01-8590-1f052d00f599",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Invoices",
+      "targets": [
+        ["linkText=Invoices", "linkText"],
+        ["css=.nav-link:nth-child(2) > a", "css:finder"],
+        ["xpath=//div[@id='app']/div/div/nav/div/div/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/vue/home/invoices')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Invoices')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c3cb40e0-93a0-4d84-9c6b-85644f678a98",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dashboard",
+      "targets": [
+        ["linkText=Dashboard", "linkText"],
+        ["css=.nav-link:nth-child(1) > a", "css:finder"],
+        ["xpath=//div[@id='app']/div/div/nav/div/div/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/vue/home/dashboard')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Dashboard')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "edc62be7-1a80-486c-af63-471c1f7fbdb9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.switch",
+      "targets": [
+        ["css=.switch", "css:finder"],
+        ["xpath=//div[@id='app']/div/div/nav/div/div[2]/li[2]/div[2]/span", "xpath:idRelative"],
+        ["xpath=//div[2]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "77e96951-bb5b-4179-a276-019ca50b4ad6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.switch",
+      "targets": [
+        ["css=.switch", "css:finder"],
+        ["xpath=//div[@id='app']/div/div/nav/div/div[2]/li[2]/div[2]/span", "xpath:idRelative"],
+        ["xpath=//div[2]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "70a04b60-81b8-45c8-8cc9-7fff85a6da86",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottom-content a > .text",
+      "targets": [
+        ["css=.bottom-content a > .text", "css:finder"],
+        ["xpath=//div[@id='app']/div/div/nav/div/div[2]/li/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/li/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d8df9f0-e657-460c-b8d8-6c8e6ca907cf",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "1e4abf0c-82db-453d-be7c-511fd8618f57",
+    "name": "01-login-error",
+    "commands": [{
+      "id": "92dfc1f2-6851-4f8c-8752-7d263360227c",
+      "comment": "",
+      "command": "open",
+      "target": "/vue/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "618efd4d-79cb-4389-ac47-939bd0989b0e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1120",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9ecfa264-4fe0-45e4-b425-3fdfe46c0cf3",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.input-box:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "user"
+    }, {
+      "id": "c2d64a93-099e-4035-8a20-a0263aab64d7",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-box:nth-child(3) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "12345667"
+    }, {
+      "id": "8f4cff57-1e68-4ec1-b3d6-39750b682f97",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-box:nth-child(3) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "1c120ac0-3879-4f2f-b698-70819e445984",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.Toastify__toast-body > div",
+      "targets": [
+        ["css=.copyright", "css:finder"],
+        ["xpath=//div[@id='app']/div/footer/p", "xpath:idRelative"],
+        ["xpath=//footer/p", "xpath:position"],
+        ["xpath=//p[contains(.,'© 2024 Telenor Group')]", "xpath:innerText"]
+      ],
+      "value": "Invalid username or password"
+    }, {
+      "id": "2d7790cd-fdd9-4259-bc8a-9f14ba305791",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.input-box:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "user"
+    }, {
+      "id": "90f508d7-77ba-4bbd-897f-55ff3528823f",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-box:nth-child(3) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "c3e8c861-8067-4a3d-87f4-6ca1dce92b77",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-box:nth-child(3) > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "c7bea03a-546a-4396-87dd-7d06f81d76b9",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "f5ad2759-db18-4fda-9faa-99954bc355dd",
+    "name": "01-login-content",
+    "commands": []
+  }, {
+    "id": "976b4e30-427c-4ed0-b7ee-57e573fbe4b8",
+    "name": "temp",
+    "commands": [{
+      "id": "feb61457-26c6-44cd-9785-0ffe3904ea6e",
+      "comment": "",
+      "command": "open",
+      "target": "vue/login?error",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "85374ecb-4273-488c-aeeb-7cde315905da",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1120",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3c8bc94f-45a6-4c1c-937e-45c40faca364",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.Toastify__toast-body > div",
+      "targets": [
+        ["css=.Toastify__toast-body > div", "css:finder"],
+        ["xpath=//div[@id='06wbidz']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div", "xpath:position"]
+      ],
+      "value": "Invalid username or password"
+    }]
+  }],
+  "suites": [{
+    "id": "4352d8de-7f5f-4f7a-b328-18a41e391cf5",
+    "name": "DemoProject",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["d3f041b1-0ae3-415f-9653-395c583bd9bf", "1e4abf0c-82db-453d-be7c-511fd8618f57"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}
