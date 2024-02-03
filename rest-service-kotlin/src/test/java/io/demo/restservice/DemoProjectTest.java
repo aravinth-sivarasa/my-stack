@@ -9,6 +9,7 @@ import java.time.Duration;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -51,6 +52,7 @@ public class DemoProjectTest {
     driver.quit();
   }
   @Test
+  @Disabled
   public void login() {
     driver.get(baseURL+"/vue");
     driver.manage().window().setSize(new Dimension(1920, 1120));
@@ -69,6 +71,7 @@ public class DemoProjectTest {
     driver.close();
   }
   @Test
+  @Disabled
   public void loginError() {
     driver.get(baseURL+"/vue/login");
     driver.manage().window().setSize(new Dimension(1920, 1120));

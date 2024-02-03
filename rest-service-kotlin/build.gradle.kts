@@ -1,5 +1,5 @@
 group = "io.demo"
-version = "0.0.4-SNAPSHOT"
+version = "0.0.4"
 plugins {
 	java
 	id("org.springframework.boot") version "3.2.2"
@@ -22,6 +22,7 @@ dependencies {
 	testImplementation("org.springframework.security:spring-security-test")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 
+	implementation("org.seleniumhq.selenium:selenium-java:4.17.0")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 }
 
