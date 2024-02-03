@@ -12,12 +12,12 @@ public class UIRestController {
         return "/index.html";
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public String index(){
-        return "redirect: /vue";
+        return "index.html";
     }
 
-    @GetMapping("/error?continue")
+    //@GetMapping("/error?continue")
     public String error(){
         return "redirect: /vue";
     }

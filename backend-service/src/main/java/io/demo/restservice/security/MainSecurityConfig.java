@@ -24,6 +24,7 @@ public class MainSecurityConfig {
                 "/img/**",
                 "/js/**",
                 "/css/**", 
+                "/error",
                 "/vue/login/**",
                 "/favicon.ico",
                 "/manifest.json",

@@ -52,14 +52,11 @@ public class DemoProjectTest {
     driver.quit();
   }
   @Test
-  @Disabled
+  //@Disabled
   public void login() {
-    driver.get(baseURL+"/vue");
+    driver.get(baseURL+"/vue/dashboard");
     driver.manage().window().setSize(new Dimension(1920, 1120));
     driver.navigate().refresh();
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
-    
     driver.findElement(By.name("username")).sendKeys("user");
     driver.findElement(By.name("password")).sendKeys("password");
     driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
@@ -71,14 +68,15 @@ public class DemoProjectTest {
     driver.close();
   }
   @Test
-  @Disabled
   public void loginError() {
     driver.get(baseURL+"/vue/login");
     driver.manage().window().setSize(new Dimension(1920, 1120));
     driver.findElement(By.name("username")).sendKeys("user");
     driver.findElement(By.name("password")).sendKeys("12345667");
     driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
-    assertEquals(driver.findElement(By.cssSelector(".Toastify__toast-body > div")).getText(), is("Invalid username or password"));
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".Toastify__toast-body > div")));
+    assertEquals("Invalid username or password",driver.findElement(By.cssSelector(".Toastify__toast-body > div")).getText());
     driver.findElement(By.name("username")).sendKeys("user");
     driver.findElement(By.name("password")).sendKeys("password");
     driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
