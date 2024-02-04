@@ -1,4 +1,4 @@
-package io.demo.restservice;
+package io.demo.product.vue;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

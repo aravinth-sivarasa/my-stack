@@ -1,4 +1,4 @@
-package io.demo.restservice.microservice1;
+package io.demo.product.invoiceservice;
 
 public class InvoiceDTO {
     public record Invoice(String id) {

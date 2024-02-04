@@ -21,6 +21,10 @@ jobs:
       packages: write
     steps:
     - uses: actions/checkout@v3
+
+    - uses: browser-actions/setup-chrome@latest
+      name: Install chrome
+    - run: chrome --version
        
     - name: Use Node.js
       uses: actions/setup-node@v3

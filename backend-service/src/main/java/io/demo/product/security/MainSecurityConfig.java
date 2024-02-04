@@ -1,4 +1,4 @@
-package io.demo.restservice.security;
+package io.demo.product.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
