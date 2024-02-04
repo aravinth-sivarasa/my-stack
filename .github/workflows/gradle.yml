@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: demo-app
   BKEND_DIR: backend-service
   JDK_VERSION: 17
   NODE_VERSION: 20.x
@@ -61,10 +61,10 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: true
-        tags: ${{ env.REGISTRY }}/${{ github.repository }}/rest-service:${{ env.BUNDLE_VERSION }}
+        tags: ${{ env.REGISTRY }}/${{ github.repository }}/${{env.IMAGE_NAME}}:${{ env.BUNDLE_VERSION }}
         file: ${{env.BKEND_DIR}}/Dockerfile
         context: .
         no-cache: true
         build-args: |
-          bundle_path=${{env.BKEND_DIR}}/build/libs/rest-service-${{ env.BUNDLE_VERSION }}.jar
+          bundle_path=${{env.BKEND_DIR}}/build/libs/${{env.BKEND_DIR}}-${{ env.BUNDLE_VERSION }}.jar
         
