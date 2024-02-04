@@ -8,7 +8,8 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: demo-app
+  BKEND_DIR: backend-service
   JDK_VERSION: 17
   NODE_VERSION: 20.x
 
@@ -20,6 +21,10 @@ jobs:
       packages: write
     steps:
     - uses: actions/checkout@v3
+
+    - uses: browser-actions/setup-chrome@latest
+      name: Install chrome
+    - run: chrome --version
        
     - name: Use Node.js
       uses: actions/setup-node@v3
@@ -40,7 +45,7 @@ jobs:
 
     - name: Execute Gradle build
       run: ./gradlew build
-      working-directory: rest-service-kotlin/
+      working-directory: ${{env.BKEND_DIR}}/
 
     - name: Log in to the Container registry
       uses: docker/login-action@v3
@@ -51,15 +56,15 @@ jobs:
 
     - name: Fetch the bundle version
       run: |
-        echo "BUNDLE_VERSION=$(sed -n '2p' rest-service-kotlin/build.gradle.kts | cut -d'=' -f 2 | sed 's/[[:space:]]//g' | cut -d'"' -f 2)" >> "$GITHUB_ENV"
+        echo "BUNDLE_VERSION=$(sed -n '2p' ${{env.BKEND_DIR}}/build.gradle.kts | cut -d'=' -f 2 | sed 's/[[:space:]]//g' | cut -d'"' -f 2)" >> "$GITHUB_ENV"
     - name: Push the image to Github registry
       uses: docker/build-push-action@v5
       with:
         push: true
-        tags: ${{ env.REGISTRY }}/${{ github.repository }}/rest-service:${{ env.BUNDLE_VERSION }}
-        file: rest-service-kotlin/Dockerfile
+        tags: ${{ env.REGISTRY }}/${{ github.repository }}/${{env.IMAGE_NAME}}:${{ env.BUNDLE_VERSION }}
+        file: ${{env.BKEND_DIR}}/Dockerfile
         context: .
         no-cache: true
         build-args: |
-          bundle_path=rest-service-kotlin/build/libs/rest-service-${{ env.BUNDLE_VERSION }}.jar
+          bundle_path=${{env.BKEND_DIR}}/build/libs/${{env.BKEND_DIR}}-${{ env.BUNDLE_VERSION }}.jar
         
