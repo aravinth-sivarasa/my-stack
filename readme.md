@@ -1,6 +1,7 @@
 - Backend service tasks
     - [x] Spring boot security
-    - [x] Integrated with Selenium 
+    - [x] Integrated with Selenium for Vue ui testing 
+    - [x] Added JUnit test cases 
     - [x] Git action for image build and push
 
 - User Interface tasks
