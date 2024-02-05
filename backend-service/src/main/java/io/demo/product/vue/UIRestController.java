@@ -16,9 +16,4 @@ public class UIRestController {
     public String index(){
         return "index.html";
     }
-
-    //@GetMapping("/error?continue")
-    public String error(){
-        return "redirect: /vue";
-    }
 }

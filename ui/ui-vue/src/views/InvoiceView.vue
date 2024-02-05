@@ -1,13 +1,13 @@
 <template>
     <div class="invoice">
-        <div class="text"><h5>Invoice</h5></div>
+        <div class="text"><h5>Faktura</h5></div>
   
         <div class="tbl-section">
             <table class="tbl-style">
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Invoice Amunt</th>
+                    <th>Fornavn</th>
+                    <th>Etternavn</th>
+                    <th>Fakturabeløp</th>
                 </tr>
 
 
