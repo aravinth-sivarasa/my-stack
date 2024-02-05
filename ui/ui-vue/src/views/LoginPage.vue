@@ -3,24 +3,24 @@
     <div class="body-login">
         <div class="wrapper">
             <form action="/vue/login" method="POST">
-                <h1>Login</h1>
+                <h1>Logg inn</h1>
                 <div class="input-box">
-                    <input type="text" name="username" placeholder="Username" required  />
+                    <input type="text" name="username" placeholder="Brukernavn" required  />
                     <!-- <box-icon name="user" type="solid" class="icon-style"></box-icon> -->
                     <i class="bx bxs-user"></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" name="password" placeholder="Password" required />
+                    <input type="password" name="password" placeholder="Passord" required />
                     <i class="bx bxs-lock-alt"></i>
                 </div>
                 <div class="remember-forgot">
-                    <label><input type="checkbox">Remember me</label>
-                    <a href="#">Forgot password?</a>
+                    <label><input type="checkbox">Husk meg</label>
+                    <a href="#">Glemt passord?</a>
                 </div>
-                <button class="btn" type="submit">Login</button>
+                <button class="btn" type="submit">Logg inn</button>
                 <div class="register-link">
                     <p>
-                        Don't have an account? <a href="#">Register</a>
+                        Har ikke en konto? <a href="#">Registrer deg</a>
                     </p>
                 </div>
             </form>
@@ -43,7 +43,7 @@ export default defineComponent({
     setup(){
         const route = useRoute();
         if(route.query.error === null){
-            toast("Invalid username or password", {
+            toast("Ugyldig brukernavn eller passord", {
                 "theme": "colored",
                 "type": "error",
                 icon: false,

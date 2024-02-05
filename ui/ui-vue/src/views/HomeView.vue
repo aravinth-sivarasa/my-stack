@@ -23,13 +23,13 @@
                         <li class="nav-link">
                             <a href="/vue/home/dashboard">
                                 <i class="bx bx-home-alt icon"></i>
-                                <span class="text nav-text">Dashboard</span>
+                                <span class="text nav-text">Dashbord</span>
                             </a>
                         </li>
                         <li class="nav-link">
                             <a href="/vue/home/invoices">
                                 <i class="bx bx-wallet icon"></i>
-                                <span class="text nav-text">Invoices</span>
+                                <span class="text nav-text">Fakturaer</span>
                             </a>
                         </li>
                     </ul>
@@ -38,7 +38,7 @@
                     <li class="">
                         <a href="/logout">
                             <i class="bx bx-log-out icon"></i>
-                            <span class="text nav-text">Logout</span>
+                            <span class="text nav-text">logg ut</span>
                         </a>
                     </li>
 
@@ -58,7 +58,7 @@
             </div>
         </nav>
         <section class="home">
-            <div class="text">Home</div>
+            <div class="text">Hjemme</div>
             <router-view/>
         </section>
     </div>
@@ -74,7 +74,7 @@ export default defineComponent({
             darkMode: true,
             navStyle: "",
             closeNav: false,
-            lblMode: "Light Mode"
+            lblMode: "Lyst Modus"
         }
     },
     methods:{
@@ -82,10 +82,10 @@ export default defineComponent({
             this.darkMode = !this.darkMode
             if(this.darkMode){
                 this.bodyStyle = "dark"
-                this.lblMode = "Light Mode"
+                this.lblMode = "Lyst Modus"
             }else{
                 this.bodyStyle = ""
-                this.lblMode = "Dark Mode"
+                this.lblMode = "Mørk Modus"
             }
             // this.$emit("update:darkMode",!this.darkMode)
         },
