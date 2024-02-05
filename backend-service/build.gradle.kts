@@ -1,5 +1,5 @@
 group = "io.demo"
-version = "0.0.4"
+version = "0.0.5"
 plugins {
 	java
 	id("org.springframework.boot") version "3.2.2"

@@ -56,8 +56,8 @@ public class VueTest {
     driver.findElement(By.name("username")).sendKeys("user");
     driver.findElement(By.name("password")).sendKeys("password");
     driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
-    driver.findElement(By.linkText("Invoices")).click();
-    driver.findElement(By.linkText("Dashboard")).click();
+    driver.findElement(By.linkText("Fakturaer")).click();
+    driver.findElement(By.linkText("Dashbord")).click();
     driver.findElement(By.cssSelector(".switch")).click();
     driver.findElement(By.cssSelector(".switch")).click();
     driver.findElement(By.cssSelector(".bottom-content a > .text")).click();
@@ -73,7 +73,7 @@ public class VueTest {
     driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".Toastify__toast-body > div")));
-    assertEquals("Invalid username or password",
+    assertEquals("Ugyldig brukernavn eller passord",
         driver.findElement(By.cssSelector(".Toastify__toast-body > div")).getText());
     driver.findElement(By.name("username")).sendKeys("user");
     driver.findElement(By.name("password")).sendKeys("password");

@@ -8,8 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
-
-
+import org.springframework.security.web.savedrequest.NullRequestCache;
 import org.springframework.security.core.userdetails.User;
 
 @Configuration
@@ -18,12 +17,14 @@ public class MainSecurityConfig {
 
     @Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+
+        NullRequestCache requestCache = new NullRequestCache();
         http
         .authorizeHttpRequests((requests) -> requests
             .requestMatchers(
                 "/img/**",
                 "/js/**",
-                "/css/**", 
+                "/css/**",  
                 "/error",
                 "/vue/login/**",
                 "/favicon.ico",
@@ -33,10 +34,11 @@ public class MainSecurityConfig {
             .authenticated())
         .csrf(csrf -> csrf.disable())
         .formLogin((form) -> form
+            .loginProcessingUrl("/vue/login")
             .loginPage("/vue/login")
-            .permitAll()
             .defaultSuccessUrl("/vue/dashboard")
         )
+        .requestCache(cache -> cache.requestCache(requestCache))
         .logout((logout) -> logout.permitAll());
         return http.build();
 	}

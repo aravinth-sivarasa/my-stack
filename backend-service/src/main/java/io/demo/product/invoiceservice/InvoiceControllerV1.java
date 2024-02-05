@@ -17,7 +17,7 @@ public class InvoiceControllerV1 {
 
     @GetMapping
     List<Invoice> all(){
-        return Arrays.asList(//
+        return Arrays.asList(// 
             new Invoice(UUID.randomUUID().toString()),
             new Invoice(UUID.randomUUID().toString()));
     }
